@@ -1,6 +1,6 @@
 <!-- contenido -->
 
-            <form action="/action_page.php">
+            <form>
                 <div class="form-group">
                     <label for="email">Email address:</label>
                     <input type="email" class="form-control" id="email">
@@ -14,5 +14,5 @@
                     <input class="form-check-input" type="checkbox"> Remember me
                   </label>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Registrar</button>
             </form>

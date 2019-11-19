@@ -13,8 +13,8 @@
                 <tbody>
                     <tr>
                         <td>John</td>
-                        <td>Doe</td>
-                        <td>john@example.com</td>
+                        <td>Perkins</td>
+                        <td>john.perkins1@main.com</td>
                     </tr>
                     <tr>
                         <td>Mary</td>

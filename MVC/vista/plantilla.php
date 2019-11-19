@@ -43,16 +43,16 @@
         <div class="container">
             <ul class="nav nav-justified py-2 nav-pills">
                 <li class="nav-item">
-                    <a href="registro.html" class="nav-link">Registro</a>
+                    <a href="index.php?pagina=registro" class="nav-link">Registro</a>
                 </li>
                 <li class="nav-item">
-                    <a href="ingreso.html" class="nav-link">Ingreso</a>
+                    <a href="index.php?pagina=ingreso" class="nav-link">Ingreso</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link active">Inicio</a>
+                    <a href="index.php?pagina=inicio" class="nav-link active">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Salir</a>
+                    <a href="index.php?pagina=salir" class="nav-link">Salir</a>
                 </li>
             </ul>
         </div>
@@ -62,7 +62,21 @@
     <div class="container-fluid py-5">
         <div class="container">
         <?php
-            include "paginas/inicio.php";
+            if (isset($_GET["pagina"])) {
+                # code...
+                if ($_GET["pagina"]== "inicio" ||
+                    $_GET["pagina"] == "registro" ||
+                    $_GET["pagina"] == "ingreso" ||
+                    $_GET["pagina"] == "salir") {
+                 
+                    include "paginas/".$_GET["pagina"].".php";
+                }
+                
+            }else{
+                # code...
+                include "paginas/registro.php";
+            }
+            
         ?>
         </div>
     </div>    
