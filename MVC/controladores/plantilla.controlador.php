@@ -1,6 +1,6 @@
 <?php
 class ControladorPlantilla{
     public function ctrTraerPlantilla(){
-        include "vista/plantilla.php";
+        include "vistas/plantilla.php";
     }
 }
