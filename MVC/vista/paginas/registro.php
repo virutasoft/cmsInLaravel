@@ -1,18 +1,43 @@
 <!-- contenido -->
 
-            <form>
-                <div class="form-group">
-                    <label for="email">Email address:</label>
-                    <input type="email" class="form-control" id="email">
+<div class="d-flex justify-content-center text-center">
+    <form class="p-5 bg-light">
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-smile"></i>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" id="nombre">
                 </div>
-                <div class="form-group">
-                    <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fas fa-envelope"></i>
+                    </span>
                 </div>
-                <div class="form-group form-check">
-                    <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox"> Remember me
-                  </label>
+            <input type="email" class="form-control" id="email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="pwd">Contraseña:</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fas fa-lock"></i>
+                    </span>
                 </div>
-                <button type="submit" class="btn btn-primary">Registrar</button>
-            </form>
+                <input type="password" class="form-control" id="pwd">
+            </div>
+            
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Enviar info</button>
+    </form>
+
+</div>          
