@@ -24,7 +24,7 @@ class ModeloFormularios{
     }
 
     static public function mdlSeleccionarRegistros($tabla){
-        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+        $stmt = Conexion::conectar()->prepare("SELECT *,DATE_FORMAT(fecha, '%h:%i%p  %d %M %Y') AS fecha FROM $tabla ORDER BY id DESC");
         $stmt->execute();
 
         return $stmt->fetchAll();

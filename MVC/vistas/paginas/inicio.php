@@ -7,9 +7,10 @@
 
             <h2>Tabla de usuarios</h2>
             <p>Aquí puede visualizar los usuarios del sistema</p>
-            <table class="table table-dark table-hover">
+            <table class="table table-dark table-hover text-uppercase">
                 <thead>
                     <tr>
+                        <th>id</th>
                         <th>NOMBRE</th>
                         <th>EMAIL</th>
                         <th>FECHA</th>
@@ -20,7 +21,9 @@
                     <?php
                     foreach ($usuarios as $key => $value) {
                         # code...
+                        
                         echo '<tr>
+                        <td>'.($key+1).'</td>
                         <td>'.$value["nombre"].'</td>
                         <td>'.$value["email"].'</td>
                         <td>'.$value["fecha"].'</td>
