@@ -22,4 +22,14 @@ class ModeloFormularios{
         $stmt = null;
 
     }
+
+    static public function mdlSeleccionarRegistros($tabla){
+        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+
+        $stmt->close();
+        $stmt = null;
+    }
 }
