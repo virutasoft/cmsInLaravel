@@ -32,6 +32,7 @@ class ControladorFormularios{
             $tabla = "registros";
             $item = "email";
             $valor =$_POST["ingresoEmail"];
+
             # code...
             $respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
 
@@ -95,6 +96,31 @@ class ControladorFormularios{
 
                 
                     </script>';
+            }
+        }
+    }
+
+    public function ctrEliminarRegistro(){
+        if (isset($_POST["eliminarRegistro"])) {
+            # code...
+            $tabla = "registros";
+            $valor = $_POST["eliminarRegistro"];
+            // var_dump($valor);
+            // exit();
+            $respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);
+            
+
+            if ($respuesta == "ok") {
+                # code...
+                
+                echo '<script>
+                        if (window.history.replaceState) {
+                            window.history.replaceState(null, null, window.location.href);
+                        }
+
+                        window.location="index.php?pagina=inicio";
+                    </script>';
+                
             }
         }
     }
