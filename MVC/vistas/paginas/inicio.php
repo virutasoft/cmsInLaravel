@@ -23,8 +23,10 @@
         
     }
     
-    $usuarios = ControladorFormularios::ctrSeleccionarRegistros();
+    $usuarios = ControladorFormularios::ctrSeleccionarRegistros(null, null);
     //echo "<pre>";print_r($usuarios);"</pre>";
+
+    
 ?>
 
 <!-- contenido -->
@@ -53,8 +55,9 @@
                         <td>'.$value["fecha"].'</td>
                         <td>
                             <div class="btn-group">
-                                <button class="btn-warning"><i class="fas fa-pencil-alt"></i></button>
-                                <button class="btn-danger"><i class="fas fa-trash-alt"></i></button>
+                            
+                            <a href="index.php?pagina=editar&id='.$value["id"].'"><button class="btn-warning"><i class="fas fa-pencil-alt"></i></button>
+                                <button class="btn-danger"><i class="fas fa-trash-alt"></i></button></a>
                             </div>
                         </td>
                     </tr>';

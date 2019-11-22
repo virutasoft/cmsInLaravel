@@ -47,4 +47,25 @@ class ModeloFormularios{
         $stmt->close();
         $stmt = null;
     }
+    static public function mdlActualizarRegistro($tabla, $datos){
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre=:nombre, email=:email, contrasena=:contrasena WHERE id=:id" );
+
+        $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
+        $stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
+        $stmt->bindParam(":contrasena",$datos["contrasena"], PDO::PARAM_STR);
+        $stmt->bindParam(":id",$datos["id"], PDO::PARAM_INT);
+
+        if ($stmt->execute()) {
+            # code...
+            return "ok";
+        } else {
+            # code...
+            print_r(Conexion::conectar()->errorInfo());
+        }
+
+        $stmt-close();
+        $stmt = null;
+        
+
+    }
 }

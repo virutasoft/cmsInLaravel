@@ -18,10 +18,10 @@ class ControladorFormularios{
         }
     }
 
-    static public function ctrSeleccionarRegistros(){
+    static public function ctrSeleccionarRegistros($item, $valor){
         $tabla = "registros";
 
-        $respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, null, null);
+        $respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
 
         return $respuesta;
     }
@@ -64,6 +64,38 @@ class ControladorFormularios{
            }
            
             
+        }
+    }
+
+    public function ctrActualizarRegistro(){
+        if (isset($_POST["actualizarNombre"])) {
+            # code...
+            if ($_POST["actualizarPassword"] != "") {
+                # code...
+                $password = $_POST["actualizarPassword"];
+
+            }else{
+                $password = $_POST["passwordActual"];
+            }
+            $tabla = "registros";
+            $datos = array( "id" => $_POST["idUsuario"],/* probar tambien con GET*/
+                            "nombre"=>$_POST["actualizarNombre"],
+                            "email" =>$_POST["actualizarEmail"],
+                            "contrasena" => $password
+                            );
+            $respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
+            
+            if ($respuesta == "ok") {
+                # code...
+                echo '<div class="alert-success p-3 mb-3">El usuario ha sido actualizado!.</div>';
+                echo '<script>
+                        if (window.history.replaceState) {
+                            window.history.replaceState(null, null, window.location.href);
+                        }
+
+                
+                    </script>';
+            }
         }
     }
 }
